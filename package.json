@@ -1,0 +1,23 @@
+{
+  "name": "spocket",
+  "author": "Jamen Marzonie",
+  "version": "0.0.0",
+  "description": "Socket with easy message encoding and decoding.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamen/spocket"
+  },
+  "scripts": {
+    "test": "tape 'test/**.js'"
+  },
+  "files": [
+    "lib"
+  ],
+  "devDependencies": {
+    "eslint": "^2.9.0",
+    "eslint-config-google": "^0.5.0",
+    "tape": "^4.5.1"
+  },
+  "license": "MIT"
+}
