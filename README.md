@@ -81,6 +81,20 @@ foo.send({
 })
 ```
 
+#### `Spocket.from(socket, options)`
+Turn a `net.Socket` into a `Spocket`.
+ - `socket` (`net.Socket`) A [`net.Socket`][net-socket] to create the `Spocket` from.
+ - `options` (`Object`) The new `Spocket`'s options.
+
+Example:
+```javascript
+net.createServer(function(socket) {
+  var client = Spocket.from(socket, { ...opts });
+  // ...
+});
+```
+(See [`dap`][dap] for creating Spocket-based servers)
+
 ## Credits
 | ![jamen][avatar] |
 |:---:|
@@ -92,3 +106,4 @@ foo.send({
   [avatar]: https://avatars.githubusercontent.com/u/6251703?v=3&s=125
   [github]: https://github.com/jamen
   [net-socket]: https://nodejs.org/api/net.html#net_class_net_socket
+  [dap]: https://github.com/devjs/dap
