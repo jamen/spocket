@@ -47,6 +47,7 @@ Spocket.prototype.send = function(data, encoding, callback) {
 
 Spocket.from = function(socket, options) {
   var s = new Spocket(options);
+  s._handle = socket._handle;
   s.pipe(socket);
   socket.pipe(s);
   return s;

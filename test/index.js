@@ -13,20 +13,21 @@ var test = {
   }
 };
 
-var test = new Spocket({
+var client = new Spocket({
   algo: test
 });
 
-test.on('message', function(data) {
+client.on('message', function(data) {
   console.log(data.toString());
 });
 
-test.on('connect', function() {
-  test.write('Hello world!');
+client.on('connect', function() {
+  client.write('Hello world!');
 });
 
 var server = net.createServer(function(socket) {
-  
+  var spocket = Spocket.from(socket, { algo: test });
 });
+server.listen(1337, '127.0.0.1');
 
-test.connect('localhost:1337');
+client.connect(1337, '127.0.0.1');
